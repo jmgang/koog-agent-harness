@@ -1,0 +1,15 @@
+<configuration>
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>  %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Keep Koog quiet, except for retries, which layer 6 shows. -->
+    <logger name="ai.koog" level="OFF"/>
+    <logger name="ai.koog.prompt.executor.clients.retry" level="WARN"/>
+
+    <root level="WARN">
+        <appender-ref ref="CONSOLE"/>
+    </root>
+</configuration>
